@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react';
 import { motion } from "framer-motion";
-import { BotIcon, Palette, Cloud, Code, Server, Link, Paintbrush } from 'lucide-react';
+import { BotIcon, Palette, Code, Server, Link, Paintbrush } from 'lucide-react';
 
 const services = [
     {
