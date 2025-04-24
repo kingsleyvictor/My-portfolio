@@ -42,11 +42,12 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Victor Kingsley | Creative Software Developer',
-    description: 'Creative Software Developer building scalable products with great user experiences.',
-    creator: '@victor_can_code',
-    images: ['https://victorkingsley.vercel.app/og.png'],
+    card: "summary_large_image",
+    site: "@victor_can_code",    
+    creator: "@victor_can_code", 
+    title: "Victor Kingsley | Creative Software Developer",
+    description: "Creative Software Developer building scalable products with great user experiences.",
+    images: ["https://victorkingsley.vercel.app/og.png"],
   },
   robots: {
     index: true,
