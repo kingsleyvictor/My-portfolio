@@ -55,18 +55,20 @@ const services = [
 ];
 
 const getSkillColor = (level: number): string => {
-    return level <= 40 ? "#3b82f6" : 
-           level <= 70 ? "#2563eb" : 
+    return level <= 40 ? "#3b82f6" :
+           level <= 70 ? "#2563eb" :
            "#1d4ed8";
 };
 
 const getSkillLevel = (level: number): string => {
-    return level <= 40 ? "Beginner" : 
-           level <= 70 ? "Intermediate" : 
+    return level <= 40 ? "Beginner" :
+           level <= 70 ? "Intermediate" :
            "Expert";
 };
 
 const Services = () => {
+    const [hoveredId, setHoveredId] = useState<number | null>(null);
+
     return (
         <section className="relative py-24 px-4 md:px-8 lg:px-16 overflow-hidden">
             <div className="max-w-7xl mx-auto relative">
@@ -88,7 +90,7 @@ const Services = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service) => {
-                        const [hovered, setHovered] = useState(false);
+                        const isHovered = hoveredId === service.id;
 
                         return (
                             <motion.div
@@ -102,8 +104,8 @@ const Services = () => {
                                     translateY: -5,
                                     boxShadow: "0 20px 40px rgba(0,0,0,0.2)"
                                 }}
-                                onMouseEnter={() => setHovered(true)}
-                                onMouseLeave={() => setHovered(false)}
+                                onMouseEnter={() => setHoveredId(service.id)}
+                                onMouseLeave={() => setHoveredId(null)}
                                 className="group relative bg-[#130b1c]/80 backdrop-blur-lg rounded-lg overflow-hidden border border-[#ffffff10]"
                             >
                                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -114,7 +116,6 @@ const Services = () => {
                                             <service.icon className="w-8 h-8 text-sky-500" strokeWidth={1.5} />
                                         </span>
 
-                                        {/* Circle Progress */}
                                         <div className="relative w-16 h-16 flex items-center justify-center">
                                             <svg className="absolute w-full h-full" viewBox="0 0 36 36">
                                                 <path
@@ -130,14 +131,12 @@ const Services = () => {
                                                     strokeWidth="2"
                                                     strokeLinecap="round"
                                                     initial={{ strokeDasharray: "0 100" }}
-                                                    animate={hovered ? {
+                                                    animate={isHovered ? {
                                                         strokeDasharray: `${service.skillLevel} ${100 - service.skillLevel}`
                                                     } : { strokeDasharray: "0 100" }}
                                                     transition={{ duration: 1.5, ease: "easeInOut" }}
                                                 />
                                             </svg>
-
-                                            {/* Centered Percentage */}
                                             <span
                                                 className="text-xs font-bold absolute"
                                                 style={{ color: getSkillColor(service.skillLevel) }}
@@ -155,10 +154,9 @@ const Services = () => {
                                         {service.description}
                                     </p>
 
-                                    {/* Sliding Skill Level Label */}
                                     <motion.div
                                         initial={{ opacity: 0, y: 10 }}
-                                        animate={hovered ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                                        animate={isHovered ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                                         transition={{ duration: 0.5 }}
                                         className="text-[10px] text-center uppercase font-medium tracking-wider"
                                         style={{ color: getSkillColor(service.skillLevel) }}
