@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://victorkingsley.me.',
+    url: 'https://victorkingsley.vercel.app/',
     siteName: 'Victor Kingsley Portfolio',
     title: 'Victor Kingsley | Creative Software Developer',
     description: 'Creative Software Developer specializing in web development, robotics, blockchain development, and short video animation. Building scalable products with great user experiences.',
