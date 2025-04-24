@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     description: 'Creative Software Developer specializing in web development, robotics, blockchain development, and short video animation. Building scalable products with great user experiences.',
     images: [
       {
-        url: '/og.png',
+        url: 'https://victorkingsley.vercel.app/og.png',
         width: 1200,
         height: 630,
         alt: 'Victor Kingsley - Creative Software Developer',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: 'Victor Kingsley | Creative Software Developer',
     description: 'Creative Software Developer building scalable products with great user experiences.',
     creator: '@victor_can_code',
-    images: ['/og.png'],
+    images: ['https://victorkingsley.vercel.app/og.png'],
   },
   robots: {
     index: true,
