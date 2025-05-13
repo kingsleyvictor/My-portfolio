@@ -25,8 +25,8 @@ export const projects = [
   {
     name: "My Portfolio",
     desc: "Personal portfolio showcasing projects and skills",
-    lang: "React.js + Node.js + TailwindCSS",
-    link: "https://robinsonhonour.vercel.app/",
+    lang: "Next.js + Node.js + TailwindCSS",
+    link: "https://victorkingsley.vercel.app/",
   },
   {
     name: "Rad5 tech-hub website",
